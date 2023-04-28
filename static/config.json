@@ -1,0 +1,11 @@
+{
+    "params":{
+        "user_name":"amarnath",
+        "user_password":"chandan",
+        "blog_head":"My Blog",
+        "blog_subhead":"A blog for you",
+        "about_us":"Hi! My name is Amar Nath Prajapati, I am from jaunpur U.P.",
+        "no_of_posts":2,
+        "upload_filelocation":"C:\\Users\\amarn\\Desktop\\flask_project\\my_blog\\static"
+    }
+}

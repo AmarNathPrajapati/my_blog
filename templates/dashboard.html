@@ -1,0 +1,84 @@
+{%extends "template.html" %}
+
+{%block body%}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('../static/assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['blog_head']}}</h1>
+                            <span class="subheading">{{params["blog_subhead"]}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+
+
+
+        <div class="container px-4 px-lg-5">
+            <a href="/">
+                <button class="d-block float-start btn btn-primary mb-5" >Home</button>
+            </a>
+            <a href="/logout">
+                <button class="d-block btn btn-primary mb-5 float-end" >Logout</button>
+            </a>
+            <div class="row gx-4 gx-lg-10 justify-content-center">
+                <div class="col-md-10">
+                    <h1 class="py-3 text-center">Add a Blog</h1>
+                    <a href="/edit/newblog">
+                        <button class="d-block mx-auto btn btn-primary mb-5" >Add a Blog</button>
+                    </a>
+
+                    <h1 class="py-3">Upload a file</h1>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" name="file" id="file">
+                        <button type="submit" class="d-block mx-auto btn btn-primary mb-5" >upload file</button>
+                    </form>
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">sno</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">SubTitle</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit </th>
+                            <th scope="col">Delete </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+
+                        {% for post in posts %}
+                          <tr>
+                            <td>
+                                {{post.sno}}
+                            </td>
+                            <td>
+                                {{post.title}}
+                            </td>
+                            <td>
+                                {{post.sub_title}}
+                            </td>
+                            <td>
+                                {{post.date}}
+                            </td>
+                            <th scope="col"><a href="/edit/{{post.sno}}"><button class="btn btn-primary">Edit</button></a></th>
+                            <th scope="col"><a href="/delete/{{post.sno}}"><button class="btn btn-primary">Delete</button></a></th>
+                          </tr>
+                          
+                        {%endfor%}
+
+
+                        </tbody>
+                      </table>
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+
+{%endblock%}        

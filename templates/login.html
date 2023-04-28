@@ -1,0 +1,26 @@
+{%extends "template.html"%}
+{%block body%}
+
+<div  class="container m-5 p-5">
+    <form method="post" action="/dashboard">
+        <h1 class="text-center">Admin Login</h1>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input name="uname" type="text" id="form2Example1" class="form-control" />
+          <label class="form-label" for="form2Example1">Username</label>
+        </div>
+      
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input name="pass" type="password" id="form2Example2" class="form-control" />
+          <label class="form-label" for="form2Example2">Password</label>
+        </div>
+      
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary d-block mx-auto">login</button>
+      </form>
+</div>
+
+
+{%endblock%}
